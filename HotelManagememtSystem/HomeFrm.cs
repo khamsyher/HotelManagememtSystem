@@ -14,14 +14,35 @@ namespace HotelManagememtSystem
 {
     public partial class HomeFrm : Form
     {
-        private ManageRooms manageRoomsControl;
-        private ManageCustomer manageCustomerControl;
+        private string employeeRole;
         public HomeFrm()
         {
             InitializeComponent();
             ManageHome MH = new ManageHome();
             addUserControl(MH);
         }
+        public void SetEmployeeName(string employeeName)
+        {
+            txt_employeename.Text = employeeName;
+        }
+        public void SetEmployeeRole(string role)
+        {
+            employeeRole = role;
+            // set permission 
+            if (employeeRole == "Admin")
+            {
+                btn_employee.Visible = true; 
+            }
+            else if( employeeRole == "Employee")
+            {
+                btn_employee.Visible = false;  
+            }
+            else
+            {
+                btn_employee.Visible = false;
+            }
+        }
+        
 
         private void HomeFrm_Load(object sender, EventArgs e)
         {
@@ -57,8 +78,11 @@ namespace HotelManagememtSystem
 
         private void btn_employee_Click(object sender, EventArgs e)
         {
-            ManageEmployee me = new ManageEmployee();
-            addUserControl(me);
+            if (employeeRole != "Employee")
+            {
+                ManageEmployee me = new ManageEmployee();
+                addUserControl(me);
+            }
         }
 
         private void btn_logout_Click(object sender, EventArgs e)
@@ -66,15 +90,17 @@ namespace HotelManagememtSystem
             Application.Exit();
         }
 
-        private void btn_dashboard_MouseEnter(object sender, EventArgs e)
+
+        private void btn_customerCheckout_Click(object sender, EventArgs e)
         {
-            btn_dashboard.FillColor = Color.White; 
+            ManageCustomersCheckout mcc = new ManageCustomersCheckout();
+            addUserControl(mcc);
         }
 
-        private void btn_dashboard_MouseLeave(object sender, EventArgs e)
-        { 
-            btn_dashboard.BackColor = Color.Blue; 
+        private void btn_Report_Click(object sender, EventArgs e)
+        {
+            CustomerReport cr = new CustomerReport();
+            addUserControl(cr);
         }
-
     }
 }

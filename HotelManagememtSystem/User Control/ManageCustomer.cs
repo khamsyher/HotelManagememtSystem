@@ -26,7 +26,7 @@ namespace HotelManagememtSystem.User_Control
         {
             con = new SqlConnection("Data Source=LAPTOP-MCN7P17D\\SQLEXPRESS;Initial Catalog=HotelManagementSystem;Integrated Security=True");
             con.Open();
-            cmd = new SqlCommand("SELECT c.c_id,c.c_name, c.c_age, c.c_gender, c.c_phone, c.checkin, c.checkout, c.room, FORMAT(c.price, 'N2', 'de-DE') as price FROM Tb_Customers c", con);
+            cmd = new SqlCommand("SELECT c.c_id,c.c_name, c.c_age, c.c_gender, c.c_phone, c.checkin, c.checkout, c.room, FORMAT(c.price, 'N2', 'de-DE') as price, c.paystatus FROM Tb_Customers c;", con);
             //cmd = new SqlCommand("SELECT c.c_id,c.c_name, c.c_age, c.c_gender, c.c_phone, c.checkin, c.checkout, r.r_number as room, FORMAT(c.price, 'N2', 'de-DE') as price FROM Tb_Customers c JOIN Tb_Room r ON c.room = r.id;", con);
             da = new SqlDataAdapter(cmd);
             dtb = new DataTable();
@@ -89,7 +89,7 @@ namespace HotelManagememtSystem.User_Control
                     // Insert data
                     string gender = rb_male.Checked ? "ຊາຍ" : (rb_female.Checked ? "ຍິງ" : "ອື່ນໆ");
 
-                    cmd = new SqlCommand("INSERT INTO Tb_Customers(c_name, c_age, c_gender, c_phone, checkin, checkout, room, price)  values(@customername, @age, @gender, @phone, @checkin, @checkout, @room, @price)", con);
+                    cmd = new SqlCommand("INSERT INTO Tb_Customers(c_name, c_age, c_gender, c_phone, checkin, checkout, room, price, paystatus)  values(@customername, @age, @gender, @phone, @checkin, @checkout, @room, @price, @paystatus)", con);
                     cmd.Parameters.AddWithValue("@customername", txt_cname.Text);
                     cmd.Parameters.AddWithValue("@age", int.Parse(txt_cage.Text));
                     cmd.Parameters.AddWithValue("@gender", gender);
@@ -98,6 +98,7 @@ namespace HotelManagememtSystem.User_Control
                     cmd.Parameters.AddWithValue("@checkout", checkoutDate);
                     cmd.Parameters.AddWithValue("@room", cb_room.SelectedItem.ToString());
                     cmd.Parameters.AddWithValue("@price", decimal.Parse(txt_price.Text));
+                    cmd.Parameters.AddWithValue("@paystatus", cb_Paystatus.SelectedItem);
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("ເພີ່ມຂໍ້ມູນພະນັກງານສຳເລັດ!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -112,6 +113,7 @@ namespace HotelManagememtSystem.User_Control
                     txt_cphone.Text = "";
                     txt_price.Text = "";
                     cb_room.SelectedIndex = 0;
+                    cb_Paystatus.SelectedItem = "";
                 }
             }
         }
@@ -132,7 +134,7 @@ namespace HotelManagememtSystem.User_Control
                 DateTime checkinDate = dt_checkin.Value;
                 DateTime checkoutDate = dt_checkout.Value;
 
-                cmd = new SqlCommand("UPDATE Tb_Customers SET c_name=@customername, c_age=@age, c_gender=@gender, c_phone=@phone, checkin=@checkin, checkout=@checkout, room=@room, price=@price WHERE c_id=@cid", con);
+                cmd = new SqlCommand("UPDATE Tb_Customers SET c_name=@customername, c_age=@age, c_gender=@gender, c_phone=@phone, checkin=@checkin, checkout=@checkout, room=@room, price=@price, paystatus=@paystatus WHERE c_id=@cid", con);
                 cmd.Parameters.AddWithValue("@cid", txt_cid.Text);
                 cmd.Parameters.AddWithValue("@customername", txt_cname.Text);
                 cmd.Parameters.AddWithValue("@age", int.Parse(txt_cage.Text));
@@ -140,13 +142,13 @@ namespace HotelManagememtSystem.User_Control
                 cmd.Parameters.AddWithValue("@phone", txt_cphone.Text);
                 cmd.Parameters.AddWithValue("@checkin", checkinDate);
                 cmd.Parameters.AddWithValue("@checkout", checkoutDate);
-                cmd.Parameters.AddWithValue("@room", cb_room.SelectedIndex + 1);
+                cmd.Parameters.AddWithValue("@room", cb_room.SelectedItem.ToString());
                 cmd.Parameters.AddWithValue("@price", decimal.Parse(txt_price.Text));
+                cmd.Parameters.AddWithValue("@paystatus", cb_Paystatus.SelectedItem?.ToString() ?? "");
                 con.Open();
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("ແກ້ໄຂຂໍ້ມູນພະນັກງານສຳເລັດ!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 con.Close();
-                show();
                 show();
                 txt_cid.Text = "";
                 txt_cname.Text = "";
@@ -158,7 +160,7 @@ namespace HotelManagememtSystem.User_Control
                 dt_checkin.Value = DateTime.Now;
                 dt_checkout.Value = DateTime.Now;
                 txt_price.Text = "";
-                cb_room.SelectedIndex = 0;
+                cb_Paystatus.SelectedItem = "";
             }
             catch (System.Exception exp)
             {
@@ -178,6 +180,8 @@ namespace HotelManagememtSystem.User_Control
             dt_checkin.Value = Convert.ToDateTime(SelectedRow.Cells[5].Value);
             dt_checkout.Value = Convert.ToDateTime(SelectedRow.Cells[6].Value);
             cb_room.Text = SelectedRow.Cells[7].Value?.ToString();
+            cb_Paystatus.Text = SelectedRow.Cells[9].Value?.ToString();
+            //cb_pay.Text = SelectedRow?.Cells[9].ToString();
 
             if (SelectedRow.Cells[8].Value != null && decimal.TryParse(SelectedRow.Cells[8].Value.ToString(), out decimal price))
             {
@@ -228,6 +232,7 @@ namespace HotelManagememtSystem.User_Control
                 txt_cphone.Text = "";
                 dt_checkin.Value = DateTime.Now;
                 dt_checkout.Value = DateTime.Now;
+                cb_Paystatus.SelectedItem = "";
 
             }
             catch (System.Exception exp)
@@ -247,6 +252,7 @@ namespace HotelManagememtSystem.User_Control
             txt_cphone.Text = "";
             dt_checkin.Value = DateTime.Now;
             dt_checkout.Value = DateTime.Now;
+            cb_Paystatus.SelectedItem = "";
         }
 
         private void btn_search_Click(object sender, EventArgs e)
@@ -280,6 +286,66 @@ namespace HotelManagememtSystem.User_Control
             }
         }
 
+        private void btn_checkout_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                con = new SqlConnection("Data Source=LAPTOP-MCN7P17D\\SQLEXPRESS;Initial Catalog=HotelManagementSystem;Integrated Security=True");
+                string gender = rb_male.Checked ? "ຊາຍ" : (rb_female.Checked ? "ຍິງ" : "ອື່ນໆ");
 
+                // Validate checkout date
+                DateTime checkinDate = dt_checkin.Value;
+                DateTime checkoutDate = dt_checkout.Value;
+
+                // Insert into Tb_CustomersCheckout
+                cmd = new SqlCommand("INSERT INTO Tb_CustomersCheckout(o_id, o_name, o_age, o_gender, o_phone, o_checkin, o_checkout, o_room, price, o_paystatus)  VALUES(@cid, @customername, @age, @gender, @phone, @checkin, @checkout, @room, @price, @paystatus);", con);
+                cmd.Parameters.AddWithValue("@cid", int.Parse(txt_cid.Text));
+                cmd.Parameters.AddWithValue("@customername", txt_cname.Text);
+                cmd.Parameters.AddWithValue("@age", int.Parse(txt_cage.Text));
+                cmd.Parameters.AddWithValue("@gender", gender);
+                cmd.Parameters.AddWithValue("@phone", txt_cphone.Text);
+                cmd.Parameters.AddWithValue("@checkin", checkinDate);
+                cmd.Parameters.AddWithValue("@checkout", checkoutDate);
+                cmd.Parameters.AddWithValue("@price", decimal.Parse(txt_price.Text));
+                cmd.Parameters.AddWithValue("@room", cb_room.SelectedItem?.ToString() ?? "");
+                cmd.Parameters.AddWithValue("@paystatus", cb_Paystatus.SelectedItem?.ToString() ?? "");
+
+                con.Open();
+                cmd.ExecuteNonQuery();
+
+                // Delete from Tb_Customers
+                SqlCommand deleteCmd = new SqlCommand("DELETE FROM Tb_Customers WHERE c_id = @cid;", con);
+                deleteCmd.Parameters.AddWithValue("@cid", int.Parse(txt_cid.Text));
+                deleteCmd.ExecuteNonQuery();
+
+                MessageBox.Show("CHECKOUT CUSTOMER SUCCESS!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                con.Close();
+                show();
+
+                // Clear the form fields
+                txt_cid.Text = "";
+                txt_cname.Text = "";
+                txt_cage.Text = "";
+                rb_male.Checked = false;
+                rb_female.Checked = false;
+                rb_other.Checked = false;
+                txt_cphone.Text = "";
+                dt_checkin.Value = DateTime.Now;
+                dt_checkout.Value = DateTime.Now;
+                txt_price.Text = "";
+                cb_room.SelectedIndex = 0;
+                cb_Paystatus.SelectedItem = 0;
+            }
+            catch (System.Exception exp)
+            {
+                MessageBox.Show(exp.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

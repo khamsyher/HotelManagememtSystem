@@ -686,5 +686,10 @@ namespace HotelManagememtSystem.User_Control
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void ManageRooms_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

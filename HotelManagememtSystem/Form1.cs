@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelManagememtSystem.User_Control;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,10 +31,16 @@ namespace HotelManagememtSystem
                 dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
+                    string employeeName = dr["e_name"].ToString(); // Assuming the column name is "e_name"
+                    string employeeRole = dr["e_role"].ToString(); // Assuming the column name is "e_role"
                     dr.Close();
                     this.Hide();
+
                     HomeFrm hf = new HomeFrm();
+                    hf.SetEmployeeName(employeeName); // Pass the employee name to HomeFrm
+                    hf.SetEmployeeRole(employeeRole);
                     hf.ShowDialog();
+        
                 }
                 else
                 {
@@ -53,6 +60,12 @@ namespace HotelManagememtSystem
         {
             con = new SqlConnection("Data Source=LAPTOP-MCN7P17D\\SQLEXPRESS;Initial Catalog=HotelManagementSystem;Integrated Security=True");
             con.Open();
+        }
+
+        private void btn_signup_Click(object sender, EventArgs e)
+        {
+            RegisterFrm registerFrm = new RegisterFrm();
+            registerFrm.ShowDialog();
         }
     }
 }

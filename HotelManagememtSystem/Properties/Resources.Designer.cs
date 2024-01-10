@@ -83,9 +83,39 @@ namespace HotelManagememtSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap busy {
+            get {
+                object obj = ResourceManager.GetObject("busy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free {
+            get {
+                object obj = ResourceManager.GetObject("free", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_hotel_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-hotel-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_user_groups_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-user-groups-64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

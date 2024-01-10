@@ -109,6 +109,7 @@
             this.bg_room16 = new Guna.UI2.WinForms.Guna2Panel();
             this.txt_room16 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.room1.SuspendLayout();
             this.bg_room1.SuspendLayout();
             this.room2.SuspendLayout();
@@ -156,7 +157,7 @@
             this.room1.BorderRadius = 4;
             this.room1.Controls.Add(this.bg_room1);
             this.room1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(143)))), ((int)(((byte)(231)))));
-            this.room1.Location = new System.Drawing.Point(79, 37);
+            this.room1.Location = new System.Drawing.Point(89, 75);
             this.room1.Name = "room1";
             this.room1.Size = new System.Drawing.Size(199, 120);
             this.room1.TabIndex = 140;
@@ -199,7 +200,7 @@
             this.room2.BorderRadius = 4;
             this.room2.Controls.Add(this.bg_room2);
             this.room2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(143)))), ((int)(((byte)(231)))));
-            this.room2.Location = new System.Drawing.Point(303, 37);
+            this.room2.Location = new System.Drawing.Point(317, 75);
             this.room2.Name = "room2";
             this.room2.Size = new System.Drawing.Size(199, 120);
             this.room2.TabIndex = 141;
@@ -241,7 +242,7 @@
             this.room3.BorderRadius = 4;
             this.room3.Controls.Add(this.bg_room3);
             this.room3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(143)))), ((int)(((byte)(231)))));
-            this.room3.Location = new System.Drawing.Point(525, 37);
+            this.room3.Location = new System.Drawing.Point(543, 75);
             this.room3.Name = "room3";
             this.room3.Size = new System.Drawing.Size(199, 120);
             this.room3.TabIndex = 141;
@@ -283,7 +284,7 @@
             this.room4.BorderRadius = 4;
             this.room4.Controls.Add(this.bg_room4);
             this.room4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(143)))), ((int)(((byte)(231)))));
-            this.room4.Location = new System.Drawing.Point(753, 37);
+            this.room4.Location = new System.Drawing.Point(771, 75);
             this.room4.Name = "room4";
             this.room4.Size = new System.Drawing.Size(199, 120);
             this.room4.TabIndex = 141;
@@ -325,7 +326,7 @@
             this.room5.BorderRadius = 4;
             this.room5.Controls.Add(this.bg_room5);
             this.room5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(143)))), ((int)(((byte)(231)))));
-            this.room5.Location = new System.Drawing.Point(977, 37);
+            this.room5.Location = new System.Drawing.Point(995, 75);
             this.room5.Name = "room5";
             this.room5.Size = new System.Drawing.Size(199, 120);
             this.room5.TabIndex = 141;
@@ -367,7 +368,7 @@
             this.room10.BorderRadius = 4;
             this.room10.Controls.Add(this.bg_room10);
             this.room10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(143)))), ((int)(((byte)(231)))));
-            this.room10.Location = new System.Drawing.Point(977, 187);
+            this.room10.Location = new System.Drawing.Point(995, 225);
             this.room10.Name = "room10";
             this.room10.Size = new System.Drawing.Size(199, 120);
             this.room10.TabIndex = 143;
@@ -409,7 +410,7 @@
             this.room9.BorderRadius = 4;
             this.room9.Controls.Add(this.bg_room9);
             this.room9.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(143)))), ((int)(((byte)(231)))));
-            this.room9.Location = new System.Drawing.Point(753, 187);
+            this.room9.Location = new System.Drawing.Point(771, 225);
             this.room9.Name = "room9";
             this.room9.Size = new System.Drawing.Size(199, 120);
             this.room9.TabIndex = 144;
@@ -451,7 +452,7 @@
             this.room8.BorderRadius = 4;
             this.room8.Controls.Add(this.bg_room8);
             this.room8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(143)))), ((int)(((byte)(231)))));
-            this.room8.Location = new System.Drawing.Point(525, 187);
+            this.room8.Location = new System.Drawing.Point(543, 225);
             this.room8.Name = "room8";
             this.room8.Size = new System.Drawing.Size(199, 120);
             this.room8.TabIndex = 145;
@@ -493,7 +494,7 @@
             this.room7.BorderRadius = 4;
             this.room7.Controls.Add(this.bg_room7);
             this.room7.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(143)))), ((int)(((byte)(231)))));
-            this.room7.Location = new System.Drawing.Point(303, 187);
+            this.room7.Location = new System.Drawing.Point(317, 225);
             this.room7.Name = "room7";
             this.room7.Size = new System.Drawing.Size(199, 120);
             this.room7.TabIndex = 146;
@@ -535,7 +536,7 @@
             this.room6.BorderRadius = 4;
             this.room6.Controls.Add(this.bg_room6);
             this.room6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(143)))), ((int)(((byte)(231)))));
-            this.room6.Location = new System.Drawing.Point(79, 187);
+            this.room6.Location = new System.Drawing.Point(89, 225);
             this.room6.Name = "room6";
             this.room6.Size = new System.Drawing.Size(199, 120);
             this.room6.TabIndex = 142;
@@ -577,7 +578,7 @@
             this.room15.BorderRadius = 4;
             this.room15.Controls.Add(this.bg_room15);
             this.room15.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(143)))), ((int)(((byte)(231)))));
-            this.room15.Location = new System.Drawing.Point(977, 339);
+            this.room15.Location = new System.Drawing.Point(995, 377);
             this.room15.Name = "room15";
             this.room15.Size = new System.Drawing.Size(199, 120);
             this.room15.TabIndex = 143;
@@ -619,7 +620,7 @@
             this.room14.BorderRadius = 4;
             this.room14.Controls.Add(this.bg_room14);
             this.room14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(143)))), ((int)(((byte)(231)))));
-            this.room14.Location = new System.Drawing.Point(753, 339);
+            this.room14.Location = new System.Drawing.Point(771, 377);
             this.room14.Name = "room14";
             this.room14.Size = new System.Drawing.Size(199, 120);
             this.room14.TabIndex = 144;
@@ -661,7 +662,7 @@
             this.room13.BorderRadius = 4;
             this.room13.Controls.Add(this.bg_room13);
             this.room13.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(143)))), ((int)(((byte)(231)))));
-            this.room13.Location = new System.Drawing.Point(525, 339);
+            this.room13.Location = new System.Drawing.Point(543, 377);
             this.room13.Name = "room13";
             this.room13.Size = new System.Drawing.Size(199, 120);
             this.room13.TabIndex = 145;
@@ -703,7 +704,7 @@
             this.room12.BorderRadius = 4;
             this.room12.Controls.Add(this.bg_room12);
             this.room12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(143)))), ((int)(((byte)(231)))));
-            this.room12.Location = new System.Drawing.Point(303, 339);
+            this.room12.Location = new System.Drawing.Point(317, 377);
             this.room12.Name = "room12";
             this.room12.Size = new System.Drawing.Size(199, 120);
             this.room12.TabIndex = 146;
@@ -745,7 +746,7 @@
             this.room11.BorderRadius = 4;
             this.room11.Controls.Add(this.bg_room11);
             this.room11.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(143)))), ((int)(((byte)(231)))));
-            this.room11.Location = new System.Drawing.Point(79, 339);
+            this.room11.Location = new System.Drawing.Point(89, 377);
             this.room11.Name = "room11";
             this.room11.Size = new System.Drawing.Size(199, 120);
             this.room11.TabIndex = 142;
@@ -787,7 +788,7 @@
             this.room20.BorderRadius = 4;
             this.room20.Controls.Add(this.bg_room20);
             this.room20.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(143)))), ((int)(((byte)(231)))));
-            this.room20.Location = new System.Drawing.Point(977, 491);
+            this.room20.Location = new System.Drawing.Point(995, 529);
             this.room20.Name = "room20";
             this.room20.Size = new System.Drawing.Size(199, 120);
             this.room20.TabIndex = 143;
@@ -829,7 +830,7 @@
             this.room19.BorderRadius = 4;
             this.room19.Controls.Add(this.bg_room19);
             this.room19.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(143)))), ((int)(((byte)(231)))));
-            this.room19.Location = new System.Drawing.Point(753, 491);
+            this.room19.Location = new System.Drawing.Point(771, 529);
             this.room19.Name = "room19";
             this.room19.Size = new System.Drawing.Size(199, 120);
             this.room19.TabIndex = 144;
@@ -871,7 +872,7 @@
             this.room18.BorderRadius = 4;
             this.room18.Controls.Add(this.bg_room18);
             this.room18.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(143)))), ((int)(((byte)(231)))));
-            this.room18.Location = new System.Drawing.Point(525, 491);
+            this.room18.Location = new System.Drawing.Point(543, 529);
             this.room18.Name = "room18";
             this.room18.Size = new System.Drawing.Size(199, 120);
             this.room18.TabIndex = 145;
@@ -913,7 +914,7 @@
             this.room17.BorderRadius = 4;
             this.room17.Controls.Add(this.bg_room17);
             this.room17.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(143)))), ((int)(((byte)(231)))));
-            this.room17.Location = new System.Drawing.Point(303, 491);
+            this.room17.Location = new System.Drawing.Point(317, 529);
             this.room17.Name = "room17";
             this.room17.Size = new System.Drawing.Size(199, 120);
             this.room17.TabIndex = 146;
@@ -955,7 +956,7 @@
             this.room16.BorderRadius = 4;
             this.room16.Controls.Add(this.bg_room16);
             this.room16.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(143)))), ((int)(((byte)(231)))));
-            this.room16.Location = new System.Drawing.Point(79, 491);
+            this.room16.Location = new System.Drawing.Point(89, 529);
             this.room16.Name = "room16";
             this.room16.Size = new System.Drawing.Size(199, 120);
             this.room16.TabIndex = 142;
@@ -992,10 +993,21 @@
             this.label20.TabIndex = 1;
             this.label20.Text = "116";
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(50, 18);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(128, 34);
+            this.label21.TabIndex = 147;
+            this.label21.Text = "ສະຖານະຫ້ອງ";
+            // 
             // ManageRooms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label21);
             this.Controls.Add(this.room20);
             this.Controls.Add(this.room15);
             this.Controls.Add(this.room19);
@@ -1020,6 +1032,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ManageRooms";
             this.Size = new System.Drawing.Size(1283, 786);
+            this.Load += new System.EventHandler(this.ManageRooms_Load);
             this.room1.ResumeLayout(false);
             this.bg_room1.ResumeLayout(false);
             this.bg_room1.PerformLayout();
@@ -1081,6 +1094,7 @@
             this.bg_room16.ResumeLayout(false);
             this.bg_room16.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1166,5 +1180,6 @@
         private Guna.UI2.WinForms.Guna2Panel bg_room16;
         private Guna.UI2.WinForms.Guna2HtmlLabel txt_room16;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
     }
 }

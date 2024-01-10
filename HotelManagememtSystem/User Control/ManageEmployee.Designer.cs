@@ -33,7 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.cBP = new System.Windows.Forms.ComboBox();
             this.rb_other = new Guna.UI2.WinForms.Guna2RadioButton();
             this.rb_female = new Guna.UI2.WinForms.Guna2RadioButton();
             this.rb_male = new Guna.UI2.WinForms.Guna2RadioButton();
@@ -64,7 +63,6 @@
             this.eageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.egenderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ephoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.e_position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbEmployeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hotelManagementSystemDataSet1 = new HotelManagememtSystem.HotelManagementSystemDataSet1();
             this.tbEmployeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -73,6 +71,7 @@
             this.tb_EmployeesTableAdapter = new HotelManagememtSystem.HotelManagementSystemDataSet1TableAdapters.Tb_EmployeesTableAdapter();
             this.guna2ColorTransition1 = new Guna.UI2.WinForms.Guna2ColorTransition(this.components);
             this.guna2ColorTransition2 = new Guna.UI2.WinForms.Guna2ColorTransition(this.components);
+            this.cb_EmployeeRole = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ShowEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbEmployeesBindingSource)).BeginInit();
@@ -84,7 +83,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.guna2Panel1.Controls.Add(this.cBP);
+            this.guna2Panel1.Controls.Add(this.cb_EmployeeRole);
             this.guna2Panel1.Controls.Add(this.rb_other);
             this.guna2Panel1.Controls.Add(this.rb_female);
             this.guna2Panel1.Controls.Add(this.rb_male);
@@ -113,14 +112,6 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1283, 307);
             this.guna2Panel1.TabIndex = 0;
-            // 
-            // cBP
-            // 
-            this.cBP.FormattingEnabled = true;
-            this.cBP.Location = new System.Drawing.Point(637, 28);
-            this.cBP.Name = "cBP";
-            this.cBP.Size = new System.Drawing.Size(187, 37);
-            this.cBP.TabIndex = 55;
             // 
             // rb_other
             // 
@@ -205,7 +196,7 @@
             this.txt_eid.PasswordChar = '\0';
             this.txt_eid.PlaceholderText = "";
             this.txt_eid.SelectedText = "";
-            this.txt_eid.Size = new System.Drawing.Size(100, 40);
+            this.txt_eid.Size = new System.Drawing.Size(221, 40);
             this.txt_eid.TabIndex = 49;
             // 
             // cb_position
@@ -511,8 +502,7 @@
             this.epasswordDataGridViewTextBoxColumn,
             this.eageDataGridViewTextBoxColumn,
             this.egenderDataGridViewTextBoxColumn,
-            this.ephoneDataGridViewTextBoxColumn,
-            this.e_position});
+            this.ephoneDataGridViewTextBoxColumn});
             this.ShowEmployee.DataSource = this.tbEmployeesBindingSource;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
@@ -597,13 +587,6 @@
             this.ephoneDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.ephoneDataGridViewTextBoxColumn.Name = "ephoneDataGridViewTextBoxColumn";
             // 
-            // e_position
-            // 
-            this.e_position.DataPropertyName = "e_position";
-            this.e_position.HeaderText = "ຕຳແໜ່ງ";
-            this.e_position.MinimumWidth = 6;
-            this.e_position.Name = "e_position";
-            // 
             // tbEmployeesBindingSource
             // 
             this.tbEmployeesBindingSource.DataMember = "Tb_Employees";
@@ -645,6 +628,27 @@
         System.Drawing.Color.Red,
         System.Drawing.Color.Blue,
         System.Drawing.Color.Orange};
+            // 
+            // cb_EmployeeRole
+            // 
+            this.cb_EmployeeRole.BackColor = System.Drawing.Color.Transparent;
+            this.cb_EmployeeRole.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_EmployeeRole.BorderRadius = 4;
+            this.cb_EmployeeRole.BorderThickness = 2;
+            this.cb_EmployeeRole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_EmployeeRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_EmployeeRole.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_EmployeeRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_EmployeeRole.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cb_EmployeeRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cb_EmployeeRole.ItemHeight = 30;
+            this.cb_EmployeeRole.Items.AddRange(new object[] {
+            "Employee",
+            "Admin"});
+            this.cb_EmployeeRole.Location = new System.Drawing.Point(619, 62);
+            this.cb_EmployeeRole.Name = "cb_EmployeeRole";
+            this.cb_EmployeeRole.Size = new System.Drawing.Size(221, 36);
+            this.cb_EmployeeRole.TabIndex = 55;
             // 
             // ManageEmployee
             // 
@@ -702,14 +706,13 @@
         private Guna.UI2.WinForms.Guna2ColorTransition guna2ColorTransition1;
         private Guna.UI2.WinForms.Guna2RadioButton rb_other;
         private Guna.UI2.WinForms.Guna2RadioButton rb_female;
+        private Guna.UI2.WinForms.Guna2ColorTransition guna2ColorTransition2;
         private System.Windows.Forms.DataGridViewTextBoxColumn eidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn enameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn epasswordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn eageDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn egenderDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ephoneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn e_position;
-        private Guna.UI2.WinForms.Guna2ColorTransition guna2ColorTransition2;
-        private System.Windows.Forms.ComboBox cBP;
+        private Guna.UI2.WinForms.Guna2ComboBox cb_EmployeeRole;
     }
 }

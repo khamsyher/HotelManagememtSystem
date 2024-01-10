@@ -29,24 +29,29 @@
         private void InitializeComponent()
         {
             this.pSidebar = new Guna.UI2.WinForms.Guna2Panel();
+            this.btn_Report = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_customerCheckout = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btn_employee = new Guna.UI2.WinForms.Guna2Button();
             this.btn_customer = new Guna.UI2.WinForms.Guna2Button();
             this.btn_logout = new Guna.UI2.WinForms.Guna2Button();
             this.btn_room = new Guna.UI2.WinForms.Guna2Button();
             this.btn_dashboard = new Guna.UI2.WinForms.Guna2Button();
             this.pHeader = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.pShowData = new System.Windows.Forms.Panel();
+            this.txt_employeename = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pShowData = new System.Windows.Forms.Panel();
             this.pSidebar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.pHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pSidebar
             // 
+            this.pSidebar.Controls.Add(this.btn_Report);
+            this.pSidebar.Controls.Add(this.btn_customerCheckout);
             this.pSidebar.Controls.Add(this.label1);
             this.pSidebar.Controls.Add(this.guna2PictureBox1);
             this.pSidebar.Controls.Add(this.btn_employee);
@@ -55,11 +60,74 @@
             this.pSidebar.Controls.Add(this.btn_room);
             this.pSidebar.Controls.Add(this.btn_dashboard);
             this.pSidebar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pSidebar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(143)))), ((int)(((byte)(231)))));
+            this.pSidebar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.pSidebar.Location = new System.Drawing.Point(0, 0);
             this.pSidebar.Name = "pSidebar";
             this.pSidebar.Size = new System.Drawing.Size(256, 825);
             this.pSidebar.TabIndex = 1;
+            // 
+            // btn_Report
+            // 
+            this.btn_Report.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Report.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_Report.BorderRadius = 4;
+            this.btn_Report.BorderThickness = 1;
+            this.btn_Report.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Report.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Report.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Report.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Report.FillColor = System.Drawing.Color.White;
+            this.btn_Report.Font = new System.Drawing.Font("Phetsarath OT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Report.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(143)))), ((int)(((byte)(231)))));
+            this.btn_Report.Location = new System.Drawing.Point(19, 463);
+            this.btn_Report.Name = "btn_Report";
+            this.btn_Report.Size = new System.Drawing.Size(219, 45);
+            this.btn_Report.TabIndex = 8;
+            this.btn_Report.Text = "ລາຍງານ";
+            this.btn_Report.Click += new System.EventHandler(this.btn_Report_Click);
+            // 
+            // btn_customerCheckout
+            // 
+            this.btn_customerCheckout.BackColor = System.Drawing.Color.Transparent;
+            this.btn_customerCheckout.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_customerCheckout.BorderRadius = 4;
+            this.btn_customerCheckout.BorderThickness = 1;
+            this.btn_customerCheckout.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_customerCheckout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_customerCheckout.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_customerCheckout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_customerCheckout.FillColor = System.Drawing.Color.White;
+            this.btn_customerCheckout.Font = new System.Drawing.Font("Phetsarath OT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_customerCheckout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(143)))), ((int)(((byte)(231)))));
+            this.btn_customerCheckout.Location = new System.Drawing.Point(19, 399);
+            this.btn_customerCheckout.Name = "btn_customerCheckout";
+            this.btn_customerCheckout.Size = new System.Drawing.Size(219, 45);
+            this.btn_customerCheckout.TabIndex = 7;
+            this.btn_customerCheckout.Text = "ຂໍ້ມູນລູກຄ້າອອກ";
+            this.btn_customerCheckout.Click += new System.EventHandler(this.btn_customerCheckout_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Phetsarath OT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(64, 146);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(122, 29);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "KP-HOTEL";
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = global::HotelManagememtSystem.Properties.Resources.icons8_hotel_100;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(69, 41);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(103, 116);
+            this.guna2PictureBox1.TabIndex = 5;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // btn_employee
             // 
@@ -74,7 +142,7 @@
             this.btn_employee.FillColor = System.Drawing.Color.White;
             this.btn_employee.Font = new System.Drawing.Font("Phetsarath OT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(143)))), ((int)(((byte)(231)))));
-            this.btn_employee.Location = new System.Drawing.Point(19, 397);
+            this.btn_employee.Location = new System.Drawing.Point(19, 523);
             this.btn_employee.Name = "btn_employee";
             this.btn_employee.Size = new System.Drawing.Size(219, 45);
             this.btn_employee.TabIndex = 4;
@@ -159,12 +227,13 @@
             this.btn_dashboard.Name = "btn_dashboard";
             this.btn_dashboard.Size = new System.Drawing.Size(219, 45);
             this.btn_dashboard.TabIndex = 0;
-            this.btn_dashboard.Text = "ໝ້າຫຼັກ";
+            this.btn_dashboard.Text = "ຈັດການໝ້າຫຼັກ";
             this.btn_dashboard.Click += new System.EventHandler(this.btn_dashboard_Click);
             // 
             // pHeader
             // 
             this.pHeader.BackColor = System.Drawing.Color.Transparent;
+            this.pHeader.Controls.Add(this.txt_employeename);
             this.pHeader.Controls.Add(this.guna2CirclePictureBox1);
             this.pHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pHeader.FillColor = System.Drawing.Color.White;
@@ -177,6 +246,26 @@
             this.pHeader.Size = new System.Drawing.Size(1264, 60);
             this.pHeader.TabIndex = 2;
             // 
+            // txt_employeename
+            // 
+            this.txt_employeename.AutoSize = true;
+            this.txt_employeename.Location = new System.Drawing.Point(1152, 14);
+            this.txt_employeename.Name = "txt_employeename";
+            this.txt_employeename.Size = new System.Drawing.Size(66, 29);
+            this.txt_employeename.TabIndex = 1;
+            this.txt_employeename.Text = "label2";
+            // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.Image = global::HotelManagememtSystem.Properties.Resources.users;
+            this.guna2CirclePictureBox1.ImageRotate = 0F;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(1099, 3);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(53, 54);
+            this.guna2CirclePictureBox1.TabIndex = 0;
+            this.guna2CirclePictureBox1.TabStop = false;
+            // 
             // pShowData
             // 
             this.pShowData.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -184,40 +273,6 @@
             this.pShowData.Name = "pShowData";
             this.pShowData.Size = new System.Drawing.Size(1264, 765);
             this.pShowData.TabIndex = 3;
-            // 
-            // guna2CirclePictureBox1
-            // 
-            this.guna2CirclePictureBox1.Image = global::HotelManagememtSystem.Properties.Resources.users;
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(1189, 3);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(53, 54);
-            this.guna2CirclePictureBox1.TabIndex = 0;
-            this.guna2CirclePictureBox1.TabStop = false;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::HotelManagememtSystem.Properties.Resources.icons8_hotel_100;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(69, 41);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(103, 116);
-            this.guna2PictureBox1.TabIndex = 5;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Phetsarath OT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(64, 146);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 29);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "KP-HOTEL";
             // 
             // HomeFrm
             // 
@@ -234,9 +289,10 @@
             this.Load += new System.EventHandler(this.HomeFrm_Load);
             this.pSidebar.ResumeLayout(false);
             this.pSidebar.PerformLayout();
-            this.pHeader.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.pHeader.ResumeLayout(false);
+            this.pHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -254,5 +310,8 @@
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2Button btn_customerCheckout;
+        private System.Windows.Forms.Label txt_employeename;
+        private Guna.UI2.WinForms.Guna2Button btn_Report;
     }
 }

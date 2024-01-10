@@ -25,7 +25,7 @@ namespace HotelManagememtSystem.User_Control
         {
             con = new SqlConnection("Data Source=LAPTOP-MCN7P17D\\SQLEXPRESS;Initial Catalog=HotelManagementSystem;Integrated Security=True");
             con.Open();
-            cmd = new SqlCommand("SELECT e.e_id, e.e_name, e.e_password, e.e_age, e.e_gender, e.e_phone, p.position FROM Tb_Employees e JOIN Tb_Position p ON e.e_position = p.id;", con);
+            cmd = new SqlCommand("SELECT e.e_id, e.e_name, e.e_password, e.e_age, e.e_gender, e.e_phone, p.position, e.e_role FROM Tb_Employees e JOIN Tb_Position p ON e.e_position = p.id;", con);
             da = new SqlDataAdapter(cmd);
             dtb = new DataTable();
             da.Fill(dtb);
@@ -85,13 +85,14 @@ namespace HotelManagememtSystem.User_Control
                     // Insert data
                     string gender = rb_male.Checked ? "ຊາຍ" : (rb_female.Checked ? "ຍິງ" : "ອື່ນໆ");
 
-                    cmd = new SqlCommand("INSERT INTO Tb_Employees (e_name, e_password, e_age, e_gender, e_phone, e_position )  values(@employeename, @password, @age, @gender, @phone, @position )", con);
+                    cmd = new SqlCommand("INSERT INTO Tb_Employees (e_name, e_password, e_age, e_gender, e_phone, e_position, e_role )  values(@employeename, @password, @age, @gender, @phone, @position, @role )", con);
                     cmd.Parameters.AddWithValue("@employeename", txt_ename.Text);
                     cmd.Parameters.AddWithValue("@password", txt_epassword.Text);
                     cmd.Parameters.AddWithValue("@age", int.Parse(txt_eage.Text));
                     cmd.Parameters.AddWithValue("@gender", gender);
                     cmd.Parameters.AddWithValue("@phone", txt_ephone.Text);
                     cmd.Parameters.AddWithValue("@position", cb_position.SelectedIndex+1);
+                    cmd.Parameters.AddWithValue("@role", cb_EmployeeRole.SelectedItem);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("ເພີ່ມຂໍ້ມູນພະນັກງານສຳເລັດ!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     con.Close();
@@ -105,6 +106,7 @@ namespace HotelManagememtSystem.User_Control
                     txt_ephone.Text = "";
                     txt_epassword.Text = "";
                     cb_position.SelectedIndex = -1;
+                    cb_EmployeeRole.SelectedIndex = -1;
                 }
             }
         }
@@ -118,7 +120,7 @@ namespace HotelManagememtSystem.User_Control
                 con = new SqlConnection("Data Source=LAPTOP-MCN7P17D\\SQLEXPRESS;Initial Catalog=HotelManagementSystem;Integrated Security=True");
                 string gender = rb_male.Checked ? "ຊາຍ" : (rb_female.Checked ? "ຍິງ" : "ອື່ນໆ");
 
-                cmd = new SqlCommand("UPDATE Tb_Employees SET e_name=@employeename, e_password=@password, e_age=@age, e_gender=@gender, e_phone=@phone, e_position=@position WHERE e_id=@eid", con);
+                cmd = new SqlCommand("UPDATE Tb_Employees SET e_name=@employeename, e_password=@password, e_age=@age, e_gender=@gender, e_phone=@phone, e_position=@position, e_role=@role WHERE e_id=@eid", con);
                 cmd.Parameters.AddWithValue("@eid", txt_eid.Text);
                 cmd.Parameters.AddWithValue("@employeename", txt_ename.Text);
                 cmd.Parameters.AddWithValue("@password", txt_epassword.Text);
@@ -126,6 +128,7 @@ namespace HotelManagememtSystem.User_Control
                 cmd.Parameters.AddWithValue("@gender", gender);
                 cmd.Parameters.AddWithValue("@phone", txt_ephone.Text);
                 cmd.Parameters.AddWithValue("@position", cb_position.SelectedIndex + 1);
+                cmd.Parameters.AddWithValue("@role", cb_EmployeeRole.SelectedItem);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("ແກ້ໄຂຂໍ້ມູນພະນັກງານສຳເລັດ!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -140,6 +143,7 @@ namespace HotelManagememtSystem.User_Control
                 txt_ephone.Text = "";
                 txt_epassword.Text = "";
                 cb_position.SelectedIndex = -1;
+                cb_EmployeeRole.SelectedIndex = -1;
             }
             catch (System.Exception exp)
             {
@@ -195,6 +199,7 @@ namespace HotelManagememtSystem.User_Control
             txt_ephone.Text = "";
             txt_epassword.Text = "";
             cb_position.SelectedIndex = -1;
+            cb_EmployeeRole.SelectedIndex = -1;
         }
         /*canel data*/
         private void btn_canel_Click(object sender, EventArgs e)
@@ -216,7 +221,7 @@ namespace HotelManagememtSystem.User_Control
                     txt_eage.Text = selectedRow.Cells[3].Value?.ToString();
                     txt_ephone.Text = selectedRow.Cells[5].Value?.ToString();
                     cb_position.Text = selectedRow.Cells[6].Value?.ToString();
-
+                    cb_EmployeeRole.Text = selectedRow.Cells[7].Value?.ToString();
                     string gender = selectedRow.Cells[4].Value?.ToString();
 
                     switch (gender)

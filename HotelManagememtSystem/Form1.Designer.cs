@@ -80,6 +80,7 @@
             this.btn_signup.Size = new System.Drawing.Size(327, 45);
             this.btn_signup.TabIndex = 11;
             this.btn_signup.Text = "ລົງທະບຽນຜູ້ໃຊ້ໃໝ່";
+            this.btn_signup.Click += new System.EventHandler(this.btn_signup_Click);
             // 
             // btn_log
             // 
@@ -116,9 +117,9 @@
             this.txt_password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_password.Location = new System.Drawing.Point(43, 229);
             this.txt_password.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txt_password.MaxLength = 20;
+            this.txt_password.MaxLength = 8;
             this.txt_password.Name = "txt_password";
-            this.txt_password.PasswordChar = '\0';
+            this.txt_password.PasswordChar = '*';
             this.txt_password.PlaceholderText = "password";
             this.txt_password.SelectedText = "";
             this.txt_password.Size = new System.Drawing.Size(327, 53);
